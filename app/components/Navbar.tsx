@@ -4,9 +4,9 @@ import NavbarItem, { NavbarItemParam } from "./NavbarItem";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-center gap-8 mt-2">
+    <div className="flex justify-center gap-8 mt-4">
       <NavbarItem title="Latest" param={NavbarItemParam.latest} />
-      <NavbarItem title="Popular" param={NavbarItemParam.popular} />
+      <NavbarItem title="Ranked" param={NavbarItemParam.ranked} />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Provider from "./Provider";
 import "./globals.css";
+import SearchBox from "./components/SearchBox";
 
 export const metadata = {
   title: "MyFilmList",
@@ -17,7 +18,7 @@ export default function RootLayout({
       <body>
         <Provider>
           <Header />
-
+          <SearchBox />
           {children}
         </Provider>
       </body>

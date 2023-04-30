@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export enum NavbarItemParam {
   latest = "latest",
-  popular = "popular",
+  ranked = "ranked",
 }
 
 interface NavbarItemProps {
@@ -14,6 +14,7 @@ interface NavbarItemProps {
 }
 
 const NavbarItem: React.FC<NavbarItemProps> = ({ title, param }) => {
+  const currentPath = usePathname();
   const searchParams = useSearchParams();
   const currentOrder = searchParams.get("order");
   return (
@@ -24,7 +25,7 @@ const NavbarItem: React.FC<NavbarItemProps> = ({ title, param }) => {
         text-center shadow-md  hover:shadow-lg dark:hover:text-white`
       }
     >
-      <Link href={`/?order=${param}`}>{title}</Link>
+      <Link href={`${currentPath}/?order=${param}`}>{title}</Link>
     </div>
   );
 };
